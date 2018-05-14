@@ -37,14 +37,13 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form2")) {
-  $updateSQL = sprintf("UPDATE pasien SET nm_pasien=%s, j_kel=%s, agama=%s, alamat=%s, tgl_lhr=%s, usia=%s, no_tlp=%s, nm_kk=%s, hub_kel=%s WHERE no_pasien=%s",
+  $updateSQL = sprintf("UPDATE pasien SET nm_pasien=%s, j_kel=%s, agama=%s, alamat=%s, tgl_lhr=%s, usia=%s, nm_kk=%s, hub_kel=%s WHERE no_pasien=%s",
                        GetSQLValueString($_POST['nm_pasien'], "text"),
                        GetSQLValueString($_POST['j_kel'], "text"),
                        GetSQLValueString($_POST['agama'], "text"),
                        GetSQLValueString($_POST['alamat'], "text"),
                        GetSQLValueString($_POST['tgl_lhr'], "date"),
                        GetSQLValueString($_POST['usia'], "int"),
-                       GetSQLValueString($_POST['no_tlp'], "int"),
                        GetSQLValueString($_POST['nm_kk'], "text"),
                        GetSQLValueString($_POST['hub_kel'], "text"),
                        GetSQLValueString($_POST['no_pasien'], "int"));
@@ -100,7 +99,7 @@ $totalRows_editdata = mysql_num_rows($editdata);
 	<?php include("sidebar.php"); ?>
     <div class="span9">
     <div class='well' fixed center;'>
-		<b>SRIS - Jakri Medical Centre</b>
+		<b>Sistem Informasi Klinik</b>
 		<p style='margin-top:10px'>
 	  <form method="post" name="form1" id="form1">
 	    <input type="hidden" name="no_pasien" />
@@ -142,10 +141,6 @@ $totalRows_editdata = mysql_num_rows($editdata);
           <tr valign="baseline">
             <td nowrap="nowrap" align="right">Usia</td>
             <td><input required type="text" name="usia" value="<?php echo htmlentities($row_editdata['usia'], ENT_COMPAT, 'utf-8'); ?>" size="32" class="span9" /></td>
-          </tr>
-          <tr valign="baseline">
-            <td nowrap="nowrap" align="right">Nomor Telephone</td>
-            <td><input required type="text" name="no_tlp" value="<?php echo htmlentities($row_editdata['no_tlp'], ENT_COMPAT, 'utf-8'); ?>" size="32" class="span9" /></td>
           </tr>
           <tr valign="baseline">
             <td nowrap="nowrap" align="right">Nama Kepala Keluarga</td>
