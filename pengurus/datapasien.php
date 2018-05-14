@@ -39,7 +39,7 @@ if (isset($_GET['pageNum_datapasien'])) {
 $startRow_datapasien = $pageNum_datapasien * $maxRows_datapasien;
 
 mysql_select_db($database_koneksi, $koneksi);
-$query_datapasien = "SELECT no_pasien, nm_pasien, j_kel, alamat, no_tlp FROM pasien";
+$query_datapasien = "SELECT no_pasien, nm_pasien, j_kel, alamat FROM pasien";
 $query_limit_datapasien = sprintf("%s LIMIT %d, %d", $query_datapasien, $startRow_datapasien, $maxRows_datapasien);
 $datapasien = mysql_query($query_limit_datapasien, $koneksi) or die(mysql_error());
 $row_datapasien = mysql_fetch_assoc($datapasien);
@@ -77,7 +77,6 @@ $totalPages_datapasien = ceil($totalRows_datapasien/$maxRows_datapasien)-1;
 		    <td>Nama Pasien</td>
 		    <td>Jenis Kelamin</td>
 		    <td>Alamat</td>
-		    <td>Nomor Telephone</td>
 		    <td>Aksi</td>
 	      </tr>
 		  <?php do { ?>
@@ -86,7 +85,6 @@ $totalPages_datapasien = ceil($totalRows_datapasien/$maxRows_datapasien)-1;
 		      <td><?php echo $row_datapasien['nm_pasien']; ?></td>
 		      <td><?php echo $row_datapasien['j_kel']; ?></td>
 		      <td><?php echo $row_datapasien['alamat']; ?></td>
-		      <td><?php echo $row_datapasien['no_tlp']; ?></td>
 		      <td>
               <div class='btn-group'>
               <a href="hapuspasien.php?no_pasien=<?php echo $row_datapasien['no_pasien']; ?>" class="btn btn-mini btn-danger tipsy-kiri-atas" title="Hapus Data Ini"><i class="icon-remove icon-white"></i></a>
