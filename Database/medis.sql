@@ -41,7 +41,6 @@ CREATE TABLE `dokter` (
 --
 
 INSERT INTO `dokter` (`kd_dokter`, `kd_user`, `nm_dokter`, `sip`, `tmpat_lhr`, `no_tlp`, `alamat`) VALUES
-(5, 9, 'Raka Adi Nugroho', '', 'Banjarnegara', '0892112312', 'Bakal Batur Banjarnegara'),
 (6, 9, 'Robert Winston', 'siang', 'London', '+6281368658604', 'Bandar Lampung'),
 (7, 9, 'Steven James', 'malam', 'London', '+6281368658604', 'Bandar Lampung');
 
@@ -109,12 +108,9 @@ CREATE TABLE `pasien` (
 -- Dumping data untuk tabel `pasien`
 --
 
-INSERT INTO `pasien` (`no_pasien`, `nm_pasien`, `j_kel`, `agama`, `alamat`, `tgl_lhr`, `usia`, `no_tlp`, `nm_kk`, `hub_kel`) VALUES
-(16, 'Raka Adi Nugroho', 'pria', 'islam', 'Pucang Bawang', '2014-02-17', 18, 2147483647, 'Brojo S', 'Anak Kandung'),
-(18, 'Nikmat Setiawan', 'Pria', 'islam', 'Karang Tengah', '2013-10-07', 12, 2147483647, 'Misto hudin', 'Anak Kandung'),
-(19, 'Septian Andri N', 'Pria', 'islam', 'Banjarnegara, Krandegan', '2014-02-26', 23, 2147483647, 'Imam Hidayatulloh', 'Anak Kandung'),
-(20, 'Mohammad Surya Akbar', 'Pria', 'islam', 'Bandar Lampung', '1998-10-14', 19, 2147483647, 'Drs. Abdul Gani', 'Anak Kandung'),
-(21, 'Alex Miles', 'Pria', 'islam', 'Bandar Lampung', '1998-10-14', 19, 2147483647, 'Drs. Abdul Gani', 'Anak Kandung');
+INSERT INTO `pasien` (`no_pasien`, `nm_pasien`, `j_kel`, `agama`, `alamat`, `tgl_lhr`, `usia`, `nm_kk`, `hub_kel`) VALUES
+(20, 'Mohammad Surya Akbar', 'Pria', 'islam', 'Bandar Lampung', '1998-10-14', 19, 'Drs. Abdul Gani', 'Anak Kandung'),
+(21, 'Alex Miles', 'Pria', 'islam', 'Bandar Lampung', '1998-10-14', 19, 'Drs. Abdul Gani', 'Anak Kandung');
 
 --
 -- Indexes for dumped tables
